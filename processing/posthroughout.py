@@ -23,7 +23,7 @@ def tag_chapter(chapter):
 			if list_pos[x] == p[1]:
 				results[x] = results[x] + 1
 
-	result_dict = [dict(name=pos_names[n], size=results[n]) for n in range(36)]
+	result_dict = [dict(name=list_pos[n], size=results[n]) for n in range(36) if results[n] > 100]
  	return result_dict
 
 

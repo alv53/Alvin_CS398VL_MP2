@@ -41,7 +41,12 @@ function main(data){
       .attr("x", function(d) { return y(d.y); })
       .attr("dx", "6") // margin
       .attr("dy", ".35em") // vertical-align
-      .text(function(d) { return d.name; });
+      .text(function(d) { 
+        if(d.size == undefined){
+          return d.name;
+        }
+        return d.name.concat(" : ").concat(d.size);        
+      });
 
     function click(d) {
       // fade out all text elements
